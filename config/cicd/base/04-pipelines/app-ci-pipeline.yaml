@@ -72,6 +72,14 @@ spec:
     workspaces:
     - name: output
       workspace: shared-data
+  - name: go-ci
+    resources:
+      inputs:
+      - name: source
+        resource: source-repo
+    taskRef:
+      kind: Task
+      name: go-test
   - name: build-image
     params:
     - name: TLSVERIFY
